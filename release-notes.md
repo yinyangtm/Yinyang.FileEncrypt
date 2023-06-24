@@ -1,15 +1,15 @@
 # Release Notes
 
-## v1.00
+## v1.00 (06/24/23)
 
-1. Breaking changes
+### Breaking changes
 
 * None
 
-2. New features
+### New features
 
 * Released.
 
-3. Bug fixes
+### Bug fixes
 
 * None
