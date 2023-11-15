@@ -1,6 +1,5 @@
 using System;
 using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
 using System.Xml.Serialization;
 
 namespace Yinyang.FileEncrypt
@@ -32,32 +31,5 @@ namespace Yinyang.FileEncrypt
                 return obj;
             }
         }
-
-
-        /*
-         * Deserialization risks in use of BinaryFormatter and related types
-         * https://learn.microsoft.com/en-us/dotnet/standard/serialization/binaryformatter-security-guide
-        public byte[] ObjectToByteArray()
-        {
-            var bf = new BinaryFormatter();
-            using (var ms = new MemoryStream())
-            {
-                bf.Serialize(ms, this);
-                return ms.ToArray();
-            }
-        }
-
-        public static FileHeader ByteArrayToObject(byte[] arrBytes)
-        {
-            using (var memStream = new MemoryStream())
-            {
-                var binForm = new BinaryFormatter();
-                memStream.Write(arrBytes, 0, arrBytes.Length);
-                memStream.Seek(0, SeekOrigin.Begin);
-                var obj = binForm.Deserialize(memStream) as FileHeader ?? throw new FormatException();
-                return obj;
-            }
-        }
-        */
     }
 }

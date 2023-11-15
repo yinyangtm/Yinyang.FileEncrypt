@@ -10,7 +10,7 @@
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/yinyangtm/Yinyang.FileEncrypt</RepositoryUrl>
-    <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
+    <TargetFrameworks>net6;net7;net8</TargetFrameworks>
     <Title>Yinyang.FileEncrypt</Title>
     <Version>1.0.1</Version>
   </PropertyGroup>

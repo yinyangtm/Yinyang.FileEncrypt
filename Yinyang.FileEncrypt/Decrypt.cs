@@ -23,7 +23,7 @@ namespace Yinyang.FileEncrypt
         public void DecodeFile(string srcFilePath, string destFolderPath, string password, IProgress<int> progress,
             CancellationToken cancellationToken)
         {
-            using (var aes = new AesManaged())
+            using (var aes = Aes.Create())
             {
                 SetAes(aes);
 
@@ -110,7 +110,7 @@ namespace Yinyang.FileEncrypt
             IProgress<int> progress,
             CancellationToken cancellationToken)
         {
-            using (var aes = new AesManaged())
+            using (var aes = Aes.Create())
             {
                 SetAes(aes);
 
@@ -197,7 +197,7 @@ namespace Yinyang.FileEncrypt
 
         public FileHeader GetFileHeader(string srcFilePath, string password)
         {
-            using (var aes = new AesManaged())
+            using (var aes = Aes.Create())
             {
                 SetAes(aes);
 
@@ -231,7 +231,7 @@ namespace Yinyang.FileEncrypt
             }
         }
 
-        private void SetAes(AesManaged aes)
+        private void SetAes(Aes aes)
         {
             aes.KeySize = KeySize;
             aes.BlockSize = BlockSize;

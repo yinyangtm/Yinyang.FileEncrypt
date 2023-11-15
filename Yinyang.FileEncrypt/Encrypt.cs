@@ -26,7 +26,7 @@ namespace Yinyang.FileEncrypt
             var key = GetKeyFromPassword(password, salt);
             var iv = GetIVFromPassword(password);
 
-            using (var aes = new AesManaged())
+            using (var aes = Aes.Create())
             {
                 var ct = CreateEncryptor(aes, key, iv);
 
@@ -79,7 +79,7 @@ namespace Yinyang.FileEncrypt
             }
         }
 
-        private ICryptoTransform CreateEncryptor(AesManaged aes, byte[] key, byte[] iv)
+        private ICryptoTransform CreateEncryptor(Aes aes, byte[] key, byte[] iv)
         {
             aes.KeySize = KeySize;
             aes.BlockSize = BlockSize;
@@ -99,7 +99,7 @@ namespace Yinyang.FileEncrypt
             var key = GetKeyFromPassword(password, salt);
             var iv = GetIVFromPassword(password);
 
-            using (var aes = new AesManaged())
+            using (var aes = Aes.Create())
             {
                 var ct = CreateEncryptor(aes, key, iv);
 
