@@ -158,7 +158,7 @@ namespace Yinyang.FileEncrypt
             fh.LastAccessTime = info.LastAccessTime.Ticks;
             fh.LastWriteTime = info.LastWriteTime.Ticks;
             fh.Name = info.Name;
-            vs = fh.ObjectToByteArray();
+            vs = fh.SerializeToByteArray();
             len = vs.Length;
             return info;
         }

@@ -52,7 +52,7 @@ namespace Yinyang.FileEncrypt
                             var bs = ReadBytesFromStream(cryptoStream, 0, sizeof(int));
                             var len = BitConverter.ToInt32(bs, 0);
                             var vs = ReadBytesFromStream(cryptoStream, 0, len);
-                            fh = FileHeader.ByteArrayToObject(vs);
+                            fh = FileHeader.Deserialize(vs);
                         }
                         catch (Exception err)
                         {
@@ -139,7 +139,7 @@ namespace Yinyang.FileEncrypt
                             var bs = ReadBytesFromStream(cryptoStream, 0, sizeof(int));
                             var len = BitConverter.ToInt32(bs, 0);
                             var vs = ReadBytesFromStream(cryptoStream, 0, len);
-                            fh = FileHeader.ByteArrayToObject(vs);
+                            fh = FileHeader.Deserialize(vs);
                         }
                         catch (Exception err)
                         {
@@ -220,7 +220,7 @@ namespace Yinyang.FileEncrypt
                             var bs = ReadBytesFromStream(cryptoStream, 0, sizeof(int));
                             var len = BitConverter.ToInt32(bs, 0);
                             var vs = ReadBytesFromStream(cryptoStream, 0, len);
-                            return FileHeader.ByteArrayToObject(vs);
+                            return FileHeader.Deserialize(vs);
                         }
                         catch (Exception err)
                         {

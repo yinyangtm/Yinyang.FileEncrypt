@@ -33,6 +33,10 @@ namespace Yinyang.FileEncrypt
             }
         }
 
+
+        /*
+         * Deserialization risks in use of BinaryFormatter and related types
+         * https://learn.microsoft.com/en-us/dotnet/standard/serialization/binaryformatter-security-guide
         public byte[] ObjectToByteArray()
         {
             var bf = new BinaryFormatter();
@@ -54,5 +58,6 @@ namespace Yinyang.FileEncrypt
                 return obj;
             }
         }
+        */
     }
 }
