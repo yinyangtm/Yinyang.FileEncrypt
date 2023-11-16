@@ -27,23 +27,19 @@ namespace Yinyang.FileEncrypt
 
         public byte[] GetIVFromPassword(string password)
         {
-            var deriveBytes = new Rfc2898DeriveBytes(password + DateTime.Now.Ticks, SaltSize);
-            deriveBytes.IterationCount = IterationCount;
+            var deriveBytes = new Rfc2898DeriveBytes(password + DateTime.Now.Ticks, SaltSize, IterationCount, HashAlgorithmName.SHA1);
             return deriveBytes.GetBytes(BlockSize / 8);
         }
 
         public byte[] GetKeyFromPassword(string password, byte[] salt)
         {
-            var deriveBytes = new Rfc2898DeriveBytes(password, salt);
-
-            deriveBytes.IterationCount = IterationCount;
-
+            var deriveBytes = new Rfc2898DeriveBytes(password, salt, IterationCount, HashAlgorithmName.SHA1);
             return deriveBytes.GetBytes(KeySize / 8);
         }
 
         public byte[] GetSalt()
         {
-            var deriveBytes = new Rfc2898DeriveBytes(DateTime.Now.Ticks.ToString(), SaltSize);
+            var deriveBytes = new Rfc2898DeriveBytes(DateTime.Now.Ticks.ToString(), SaltSize, IterationCount, HashAlgorithmName.SHA1);
             return deriveBytes.Salt;
         }
 

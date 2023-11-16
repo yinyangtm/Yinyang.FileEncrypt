@@ -20,9 +20,5 @@ namespace Yinyang.FileEncrypt
         {
         }
 
-        protected NotValidPasswordException(SerializationInfo info, StreamingContext context)
-            : base(info, context)
-        {
-        }
     }
 }
