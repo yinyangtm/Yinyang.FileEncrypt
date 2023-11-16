@@ -1,15 +1,11 @@
 # Release Notes
 
-## v1.00 (06/24/23)
+## v1.0.1 (11/16/2023)
 
-### Breaking changes
+* Change BinaryFormatter to XmlSerializer.
+* Change AesManaged to Aes.
+* Addressing Rfc2898DeriveBytes Constructors are Obsolete.
 
-* None
-
-### New features
+## v1.0.0 (06/24/2023)
 
 * Released.
-
-### Bug fixes
-
-* None
